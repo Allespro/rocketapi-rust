@@ -5,8 +5,8 @@ This library provides a pure Rust interface for the RocketAPI.
 ## Installing
 
 To install rocketapi add in Cargo.toml
-```bash
-
+```
+rocketapi = "0.1.0"
 ```
 
 ## Examples
