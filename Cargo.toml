@@ -3,12 +3,10 @@ name = "rocketapi"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-license-file = "LICENSE"
 description = "Unofficial RocketAPI Rust SDK for Instagram & Threads Private API 2024"
 repository = "https://github.com/Allespro/rocketapi-rust"
 readme = "README.md"
 keywords = ["instagram", "parsing", "scraping", "api"]
-
 
 [dependencies]
 reqwest = { version = "0.12.7", features = ["blocking", "json"]}
