@@ -9,7 +9,7 @@ pub struct InstagramAPI<'a> {
     pub counter: u32
 }
 
-impl InstagramAPI {
+impl<'a> InstagramAPI<'a> {
     /*
     Instagram API client.
     
@@ -23,7 +23,7 @@ impl InstagramAPI {
         
     For more information, see documentation: https://docs.rocketapi.io/api/
     */
-    pub fn new(token: &str, max_timeout: Duration) -> Self {
+    pub fn new(token: &'a str, max_timeout: Duration) -> Self {
         InstagramAPI {
             api: RocketAPI::new(token, max_timeout),
             last_response: Value::Null,

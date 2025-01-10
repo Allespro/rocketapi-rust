@@ -9,7 +9,7 @@ pub struct ThreadsAPI<'a> {
     pub counter: u32
 }
 
-impl ThreadsAPI {
+impl<'a> ThreadsAPI<'a> {
     /*
     Threads API client.
 
@@ -23,7 +23,7 @@ impl ThreadsAPI {
 
     For more information, see documentation: https://docs.rocketapi.io/api/
     */
-    pub fn new(token: &str, max_timeout: Duration) -> Self {
+    pub fn new(token: &'a str, max_timeout: Duration) -> Self {
         ThreadsAPI {
             api: RocketAPI::new(token, max_timeout),
             last_response: Value::Null,
