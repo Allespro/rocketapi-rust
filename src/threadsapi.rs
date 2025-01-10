@@ -3,8 +3,8 @@ use crate::api::RocketAPI;
 use crate::errors::RocketAPIError;
 use serde_json::{json, Value};
 
-pub struct ThreadsAPI {
-    pub api: RocketAPI,
+pub struct ThreadsAPI<'a> {
+    pub api: RocketAPI<'a>,
     pub last_response: Value,
     pub counter: u32
 }
@@ -23,7 +23,7 @@ impl ThreadsAPI {
 
     For more information, see documentation: https://docs.rocketapi.io/api/
     */
-    pub fn new(token: String, max_timeout: Duration) -> Self {
+    pub fn new(token: &str, max_timeout: Duration) -> Self {
         ThreadsAPI {
             api: RocketAPI::new(token, max_timeout),
             last_response: Value::Null,

@@ -6,7 +6,7 @@ This library provides a pure Rust interface for the RocketAPI.
 
 To install rocketapi add in Cargo.toml
 ```
-rocketapi = "0.1.0"
+rocketapi = "0.1.1"
 ```
 
 ## Examples
@@ -19,7 +19,7 @@ use rocketapi::errors::RocketAPIError;
 #[tokio::main]
 async fn main() {
     let mut instagram_api: InstagramAPI = InstagramAPI::new(
-        "Your API key".to_string(),
+        "Your API key",
         std::time::Duration::from_secs(30)
     );
     let username:&str = "kanyewest";
@@ -42,7 +42,7 @@ use rocketapi::errors::RocketAPIError;
 #[tokio::main]
 async fn main() {
     let mut threads_api: ThreadsAPI = ThreadsAPI::new(
-        "Your API key".to_string(),
+        "Your API key",
         std::time::Duration::from_secs(30)
     );
     let user_id: u64 = 65107478842;

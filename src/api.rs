@@ -2,14 +2,14 @@ use reqwest::{Client, Response};
 use reqwest::header::{HeaderMap, HeaderValue, CONTENT_TYPE, AUTHORIZATION};
 use std::time::Duration;
 
-pub struct RocketAPI {
+pub struct RocketAPI<'a> {
     base_url: String,
-    token: String,
+    token: &'a str,
     max_timeout: Duration,
 }
 
-impl RocketAPI {
-    pub fn new(token: String, max_timeout: Duration) -> Self {
+impl<'a> RocketAPI<'a> {
+    pub fn new(token: &'a str, max_timeout: Duration) -> Self {
         RocketAPI {
             base_url: "https://v1.rocketapi.io/".to_string(),
             token,
